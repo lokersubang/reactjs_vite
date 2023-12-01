@@ -13,8 +13,7 @@ const App = () => {
         <Button
           {...{
             type: "submit",
-            onClick: () =>
-              console.log("Hello React"),
+            onClick: () => console.log("Hello React"),
           }}
         >
           <IconBrandFacebook />
@@ -24,10 +23,7 @@ const App = () => {
           <IconBrandX />
           Login
         </Button>
-        <Button
-          type="submit"
-          className="bg-black"
-        >
+        <Button className="bg-black">
           <IconBrandGithub />
           Login
         </Button>
@@ -43,10 +39,12 @@ function Button(props) {
     className = "bg-blue-600",
     children,
     text,
+    type = "submit",
   } = props;
   return (
     <button
       {...props}
+      type={type}
       className={clsx(
         className,
         "[&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 flex gap-x-2 items-center  text-white px-4 py-2 rounded"
